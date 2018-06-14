@@ -8,7 +8,6 @@
   <title>Pig Dice</title>
 </head>
 <body>
-
   <div class="container">
     <h1>Pig Dice!</h1>
     <h2>Try your luck, instuctions below</h2>
@@ -20,73 +19,76 @@
 
     <div class="row">
       <div class="col-md-6">
-        <div class="style1">
+        <form id="namebutton">
         <div class="form-group">
           <label>Enter your name:</label>
           <input type="text" class="form-control" id="player1">
         </div>
-    <form id="lucky">
-      <button type="submit" class="btn btn-success" id="spin">Roll</button>
-      <div class="form-group">
-        <label>Roll</label>
-        <h3 id="rolls"></h3>
-      </div>
-    </form>
-
-    <form id="form-hold">
-      <div class="form-group">
-        <label>Current hold</label>
-        <h3 id="hold"></h3>
-        <button type="submit" class="btn btn-info">Hold</button>
-      </div>
-
-    </form>
-    <div class="form-group">
-        <label>Total</label>
-        <h3 id="total"></h3>
-      </div>
-    </div>
-    </div>
-
-
-
-
-    <div class="col-md-6">
-      <div class="style2">
-      <div class="form-group">
-        <label>Enter your name:</label>
-        <input type="text" class="form-control" id="player2">
-      </div>
-      <form id="lucky1">
-
-        <button type="submit" class="btn btn-success" id="spin1">Roll</button>
-        <div class="form-group">
-          <label>Roll</label>
-          <h3 id="rolls1"></h3>
+        <button type="submit" class="btn btn-danger">Enter Player 1</button>
+        </form>
+        <div class="style1">
+          <div id="name">
+            <h2></h2>
+          </div>
+          <div class="form-group">
+            <label>Total</label>
+            <h3 id="total"></h3>
+          </div>
+          <form id="lucky">
+            <button type="submit" class="btn btn-success" id="spin">Roll</button>
+            <div class="form-group">
+              <label>Roll</label>
+              <h3 id="rolls"></h3>
+            </div>
+          </form>
+          <form id="form-hold">
+            <div class="form-group">
+              <label>Current hold</label>
+              <h3 id="hold"></h3>
+              <button type="submit" class="btn btn-info">Hold</button>
+            </div>
+          </form>
         </div>
-      </form>
+      </div>
 
-      <form id="form-hold1">
+      <div class="col-md-6">
+        <form id="namebutton1">
         <div class="form-group">
-          <label>Current hold</label>
-          <h3 id="hold1"></h3>
-          <button type="submit" class="btn btn-info">Hold</button>
+          <label>Enter your name:</label>
+          <input type="text" class="form-control" id="player2">
         </div>
-
-
-      </form>
-      <div class="form-group">
-          <label>Total</label>
-          <h3 id="total1"></h3>
+        <button type="submit" class="btn btn-danger">Enter Player 2</button>
+        </form>
+        <div class="style2">
+          <div id="name1">
+            <h2></h2>
+          </div>
+          <div class="form-group">
+            <label>Total</label>
+            <h3 id="total1"></h3>
+          </div>
+          <form id="lucky1">
+            <button type="submit" class="btn btn-success" id="spin1">Roll</button>
+            <div class="form-group">
+              <label>Roll</label>
+              <h3 id="rolls1"></h3>
+            </div>
+          </form>
+          <form id="form-hold1">
+            <div class="form-group">
+              <label>Current hold</label>
+              <h3 id="hold1"></h3>
+              <button type="submit" class="btn btn-info">Hold</button>
+            </div>
+          </form>
         </div>
       </div>
     </div>
     <div>
-        <p><span id="turnCounter"></span>Turn</p>
-    </div>
+      <p class="turn">Round: <span id="turnCounter"></span></p>
     </div>
     <div id="winner">
-        <h1></h1>
+      <h1></h1>
     </div>
     <div id="winner1">
       <h1></h1>

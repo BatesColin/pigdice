@@ -1,9 +1,8 @@
 //business logic
-/*function Players(player1, player2) {
+function Player(player1, player2) {
   this.player1 = player1;
   this.player2 = player2;
-}*/
-
+}
 var turn =0
 var currentTurn = 0
 var newTotal = new Total();
@@ -30,10 +29,7 @@ var dice = {
 }
 function Total() {
   this.current = 0;
-
 }
-
-
 function Current() {
   this.currentHold = 0;
 }
@@ -42,21 +38,23 @@ Total.prototype.totalHold = function(){
   turn++
   turnTracker()
 }
-
 function turnTracker(){
   if(turn % 2 === 0){
     currentTurn ++
   }
 }
-
-
-
 //user interface
 $(document).ready(function(){
 //player1
+  $("form#namebutton").submit(function (event) {
+    event.preventDefault();
+    var player1input = $("input#player1").val();
+    var player2input = $("input#player2").val();
+    var newPlayer = new Player(player1input, player2input)
+    $("#name h2").text(newPlayer.player1);
+  });
   $("form#lucky").submit(function(event) {
     event.preventDefault();
-
     $("#rolls").text(dice.roll());
     $("#hold").text(currentHold);
     if(currentHold ===0){
@@ -64,7 +62,6 @@ $(document).ready(function(){
     }
     $("#turnCounter").text(currentTurn)
   });
-
   $("form#form-hold").submit(function(event) {
     event.preventDefault();
     newTotal.totalHold();
@@ -78,6 +75,13 @@ $(document).ready(function(){
     $("form#lucky1").toggle();
   });
 //player2
+$("form#namebutton1").submit(function (event) {
+  event.preventDefault();
+  var player1input = $("input#player1").val();
+  var player2input = $("input#player2").val();
+  var newPlayer = new Player(player1input, player2input)
+  $("#name1 h2").text(newPlayer.player2);
+});
   $("form#lucky1").submit(function(event) {
     event.preventDefault();
     $("#rolls1").text(dice.roll());
@@ -87,7 +91,6 @@ $(document).ready(function(){
     }
     $("#turnCounter").text(currentTurn)
   });
- $("")
   $("form#form-hold1").submit(function(event) {
     event.preventDefault();
     player2total.totalHold();
@@ -100,7 +103,4 @@ $(document).ready(function(){
     $("form#lucky").toggle();
     $("form#lucky1").toggle();
   });
-
-
-  $("#winner").show();
-  $("#winner").text()
+});

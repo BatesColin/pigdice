@@ -1,8 +1,10 @@
 .style1{
   background-color: #6FF3EF;
+  height: 450px;
 }
 .style2{
   background-color: #F39D52;
+  height: 450px;
 }
 #winner1{
   display: none;
@@ -16,4 +18,17 @@
 
 #lucky1{
   display: none;
+}
+#total1 {
+  font-size: 50px;
+  font-weight: bold;
+}
+#total {
+  font-size: 50px;
+  font-weight: bold;
+}
+.turn {
+  font-size: 40px;
+  color: purple;
+  text-align: center;
 }
