@@ -18,7 +18,6 @@ var dice = {
     +1;
     if (randomNumber === 1){
       currentHold = 0
-
     }
     else {
       currentHold += randomNumber;
@@ -42,24 +41,15 @@ function turnTracker(){
     currentTurn ++
   }
 }
-function win(name){
-  if(newTotal.current>=100){
-    $("#winner").toggle();
-    $(".winner").text("Congratulations " + newPlayer.player1 + " !")
-  } else if (player2total.current>=100){
-    $("#winner").toggle();
-    $(".winner").text("Congratulations " + newPlayer.player2 + " !")
-  }
-}
 var newPlayer = {};
 //user interface
 $(document).ready(function(){
 //player1
   $("form#namebutton").submit(function (event) {
     event.preventDefault();
-     var player1input = $("input#player1").val();
-     var player2input = $("input#player2").val();
-     newPlayer = new Player(player1input, player2input);
+    var player1input = $("input#player1").val();
+    var player2input = $("input#player2").val();
+    newPlayer = new Player(player1input, player2input);
     $("#name h2").text(newPlayer.player1);
   });
   $("form#lucky").submit(function(event) {
@@ -85,13 +75,13 @@ $(document).ready(function(){
     $("form#lucky1").toggle();
   });
 //player2
-$("form#namebutton1").submit(function (event) {
-  event.preventDefault();
-  var player1input = $("input#player1").val();
-  var player2input = $("input#player2").val();
-  newPlayer = new Player(player1input, player2input)
-  $("#name1 h2").text(newPlayer.player2);
-});
+  $("form#namebutton1").submit(function (event) {
+    event.preventDefault();
+    var player1input = $("input#player1").val();
+    var player2input = $("input#player2").val();
+    newPlayer = new Player(player1input, player2input)
+    $("#name1 h2").text(newPlayer.player2);
+  });
   $("form#lucky1").submit(function(event) {
     event.preventDefault();
     $("#rolls1").text(dice.roll());
@@ -118,4 +108,14 @@ $("form#namebutton1").submit(function (event) {
     event.preventDefault();
     document.location.reload(true);
   });
+//win function
+  function win(name){
+    if(newTotal.current>=100){
+      $("#winner").toggle();
+      $(".winner").text("Congratulations " + newPlayer.player1 + " !")
+    } else if (player2total.current>=100){
+      $("#winner").toggle();
+      $(".winner").text("Congratulations " + newPlayer.player2 + " !")
+    }
+  }
 });
