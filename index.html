@@ -8,6 +8,7 @@
   <title>Pig Dice</title>
 </head>
 <body>
+
   <div class="container">
     <h1>Pig Dice!</h1>
     <h2>Try your luck, instuctions below</h2>
@@ -16,7 +17,6 @@
       <li>If the player rolls any other number, it is added to their turn total and the player's turn continues.</li>
       <li>If a player chooses to "hold", their turn total is added to their score, and it becomes the next player's turn.</li>
     </ul>
-
 
     <div class="row">
       <div class="col-md-6">
@@ -39,11 +39,12 @@
         <h3 id="hold"></h3>
         <button type="submit" class="btn btn-info">Hold</button>
       </div>
-      <div class="form-group">
+
+    </form>
+    <div class="form-group">
         <label>Total</label>
         <h3 id="total"></h3>
       </div>
-    </form>
     </div>
     </div>
 
@@ -57,6 +58,7 @@
         <input type="text" class="form-control" id="player2">
       </div>
       <form id="lucky1">
+
         <button type="submit" class="btn btn-success" id="spin1">Roll</button>
         <div class="form-group">
           <label>Roll</label>
@@ -70,12 +72,17 @@
           <h3 id="hold1"></h3>
           <button type="submit" class="btn btn-info">Hold</button>
         </div>
-        <div class="form-group">
+
+
+      </form>
+      <div class="form-group">
           <label>Total</label>
           <h3 id="total1"></h3>
         </div>
-      </form>
       </div>
+    </div>
+    <div>
+        <p><span id="turnCounter"></span>Turn</p>
     </div>
     </div>
     <div id="winner">
