@@ -6,12 +6,6 @@
   background-color: #F39D52;
   height: 450px;
 }
-#winner1{
-  display: none;
-}
-#winner2{
-  display: none;
-}
 #form-hold1{
   display: none;
 }
@@ -29,6 +23,26 @@
 }
 .turn {
   font-size: 40px;
-  color: purple;
+  text-align: center;
+}
+body{
+  background-color: rgba(0, 0, 0, 0.1);
+}
+#winner{
+  display: none;
+  font-size: 50px;
+  color: #eae162;
+  text-align: center;
+  background-color: #444335;
+}
+.title{
+  text-align: center;
+  font-size: 60px;
+}
+.head{
+  text-align: center;
+}
+ul{
+  list-style-type: none;
   text-align: center;
 }

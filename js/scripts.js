@@ -6,10 +6,9 @@ function Player(player1, player2) {
 var turn =0
 var currentTurn = 0
 var newTotal = new Total();
-var newHold = new Current();
-var player2hold = new Current();
 var player2total = new Total();
 var currentHold = 0
+var player1
 
 var dice = {
   sides: 6,
@@ -22,7 +21,7 @@ var dice = {
 
     }
     else {
-      currentHold = currentHold + randomNumber;
+      currentHold += randomNumber;
     }
     return randomNumber;
   }
@@ -43,14 +42,24 @@ function turnTracker(){
     currentTurn ++
   }
 }
+function win(name){
+  if(newTotal.current>=100){
+    $("#winner").toggle();
+    $(".winner").text("Congratulations " + newPlayer.player1 + " !")
+  } else if (player2total.current>=100){
+    $("#winner").toggle();
+    $(".winner").text("Congratulations " + newPlayer.player2 + " !")
+  }
+}
+var newPlayer = {};
 //user interface
 $(document).ready(function(){
 //player1
   $("form#namebutton").submit(function (event) {
     event.preventDefault();
-    var player1input = $("input#player1").val();
-    var player2input = $("input#player2").val();
-    var newPlayer = new Player(player1input, player2input)
+     var player1input = $("input#player1").val();
+     var player2input = $("input#player2").val();
+     newPlayer = new Player(player1input, player2input);
     $("#name h2").text(newPlayer.player1);
   });
   $("form#lucky").submit(function(event) {
@@ -66,6 +75,7 @@ $(document).ready(function(){
     event.preventDefault();
     newTotal.totalHold();
     $("#total").text(newTotal.current);
+    win(newPlayer.player1);
     currentHold = 0;
     $("#hold").text(currentHold);
     $("#turnCounter").text(currentTurn)
@@ -79,7 +89,7 @@ $("form#namebutton1").submit(function (event) {
   event.preventDefault();
   var player1input = $("input#player1").val();
   var player2input = $("input#player2").val();
-  var newPlayer = new Player(player1input, player2input)
+  newPlayer = new Player(player1input, player2input)
   $("#name1 h2").text(newPlayer.player2);
 });
   $("form#lucky1").submit(function(event) {
@@ -95,6 +105,7 @@ $("form#namebutton1").submit(function (event) {
     event.preventDefault();
     player2total.totalHold();
     $("#total1").text(player2total.current);
+    win(newPlayer.player2);
     currentHold = 0;
     $("#hold1").text(currentHold);
     $("#turnCounter").text(currentTurn)
@@ -102,5 +113,9 @@ $("form#namebutton1").submit(function (event) {
     $("form#form-hold1").toggle();
     $("form#lucky").toggle();
     $("form#lucky1").toggle();
+  });
+  $("form#reset").submit(function (event) {
+    event.preventDefault();
+    document.location.reload(true);
   });
 });

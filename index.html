@@ -9,8 +9,8 @@
 </head>
 <body>
   <div class="container">
-    <h1>Pig Dice!</h1>
-    <h2>Try your luck, instuctions below</h2>
+    <h1 class="title">Pig Dice!</h1>
+    <h2 class="head">Try your luck, instuctions below</h2>
     <ul>
       <li>If the player rolls a 1, they score nothing and it becomes the next player's turn.</li>
       <li>If the player rolls any other number, it is added to their turn total and the player's turn continues.</li>
@@ -87,12 +87,12 @@
     <div>
       <p class="turn">Round: <span id="turnCounter"></span></p>
     </div>
+    <form id="reset">
     <div id="winner">
-      <h1></h1>
+      <h1 class="winner"></h1>
+      <button type="submit" value="reload" class="btn btn-warning">New Game!</button>
     </div>
-    <div id="winner1">
-      <h1></h1>
-    </div>
+    </form>
   </div>
 </body>
 </html>
